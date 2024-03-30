@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://iqys12s5srvb"]
+
+[ext_resource type="Script" path="res://enemy_bullet.gd" id="1_gk4vk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruvs5"]
+size = Vector2(6, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xt0f6"]
+
+[node name="EnemyBullet" type="Area2D"]
+script = ExtResource("1_gk4vk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ruvs5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(-1.78814e-07, -2.38419e-07)
+scale = Vector2(6, 6)
+mesh = SubResource("BoxMesh_xt0f6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

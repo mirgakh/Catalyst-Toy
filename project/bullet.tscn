@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce2sbgdju6rp7"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_blc85"]
+[ext_resource type="Texture2D" uid="uid://cu07aj2hifkaq" path="res://14.png" id="2_vyoqe"]
+[ext_resource type="AudioStream" uid="uid://cmtxfmdpgo4h3" path="res://mixkit-arcade-game-explosion-2759.wav" id="3_r5qcv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j08f7"]
+size = Vector2(16, 16)
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_blc85")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.016329, 1.48086)
+rotation = -1.5708
+scale = Vector2(0.121133, 0.12121)
+texture = ExtResource("2_vyoqe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j08f7")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="boom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_r5qcv")
+volume_db = 2.476
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
