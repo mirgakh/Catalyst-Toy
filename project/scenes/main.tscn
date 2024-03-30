@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8exv6qda8frv"]
+
+[ext_resource type="PackedScene" uid="uid://do5dyd323jmbn" path="res://scenes/world.tscn" id="3_kb2tb"]
+[ext_resource type="PackedScene" uid="uid://bxj0d6wwq7r43" path="res://scenes/carrot_seed.tscn" id="4_q5sp4"]
+[ext_resource type="PackedScene" uid="uid://dac75o0vplr25" path="res://scenes/growing_zone.tscn" id="5_44nqa"]
+[ext_resource type="PackedScene" uid="uid://b32476hejmrnj" path="res://scenes/player.tscn" id="5_hlho5"]
+
+[sub_resource type="GDScript" id="GDScript_6agh5"]
+script/source = "extends Node2D
+
+
+var score = 0
+var playing = false
+
+"
+
+[node name="Main" type="Node2D"]
+script = SubResource("GDScript_6agh5")
+
+[node name="World" parent="." instance=ExtResource("3_kb2tb")]
+
+[node name="zones" type="Node2D" parent="."]
+
+[node name="growingZone" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(92, 84)
+
+[node name="growingZone2" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(95, 166)
+
+[node name="growingZone3" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(186, 84)
+
+[node name="growingZone4" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(189, 166)
+
+[node name="growingZone5" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(274, 84)
+
+[node name="growingZone6" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(277, 166)
+
+[node name="growingZone7" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(368, 84)
+
+[node name="growingZone8" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(371, 166)
+
+[node name="Player" parent="." instance=ExtResource("5_hlho5")]
+z_index = 1
+scale = Vector2(2, 2)
+
+[node name="carrot_seed" parent="." instance=ExtResource("4_q5sp4")]
+position = Vector2(568, 185)
