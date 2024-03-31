@@ -1,21 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8exv6qda8frv"]
+[gd_scene load_steps=8 format=3 uid="uid://b8exv6qda8frv"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_7pkgq"]
 [ext_resource type="PackedScene" uid="uid://do5dyd323jmbn" path="res://scenes/world.tscn" id="3_kb2tb"]
 [ext_resource type="PackedScene" uid="uid://bxj0d6wwq7r43" path="res://scenes/carrot_seed.tscn" id="4_q5sp4"]
 [ext_resource type="PackedScene" uid="uid://dac75o0vplr25" path="res://scenes/growing_zone.tscn" id="5_44nqa"]
 [ext_resource type="PackedScene" uid="uid://b32476hejmrnj" path="res://scenes/player.tscn" id="5_hlho5"]
+[ext_resource type="Texture2D" uid="uid://c0ct2r0qghy7t" path="res://art/pngegg (2).png" id="6_cwu1l"]
 
-[sub_resource type="GDScript" id="GDScript_6agh5"]
-script/source = "extends Node2D
-
-
-var score = 0
-var playing = false
-
-"
+[sub_resource type="SpriteFrames" id="SpriteFrames_yppqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_cwu1l")
+}],
+"loop": true,
+"name": &"Carrot",
+"speed": 0.0
+}]
 
 [node name="Main" type="Node2D"]
-script = SubResource("GDScript_6agh5")
+script = ExtResource("1_7pkgq")
 
 [node name="World" parent="." instance=ExtResource("3_kb2tb")]
 
@@ -51,3 +55,18 @@ scale = Vector2(2, 2)
 
 [node name="carrot_seed" parent="." instance=ExtResource("4_q5sp4")]
 position = Vector2(568, 185)
+
+[node name="CarrotText" type="RichTextLabel" parent="."]
+offset_left = 1026.0
+offset_top = 490.0
+offset_right = 1126.0
+offset_bottom = 556.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = " = 0"
+
+[node name="CarrotIcon" type="AnimatedSprite2D" parent="."]
+position = Vector2(989.25, 527.25)
+scale = Vector2(2.3, 2.14)
+sprite_frames = SubResource("SpriteFrames_yppqt")
+animation = &"Carrot"
