@@ -1,49 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b32476hejmrnj"]
+[gd_scene load_steps=4 format=3 uid="uid://b32476hejmrnj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4pouc"]
-[ext_resource type="Texture2D" uid="uid://bddjomase2v40" path="res://art/Ship_1_A_Small.png" id="3_4duu2"]
+[ext_resource type="Texture2D" uid="uid://mw6yoxqq5sp" path="res://art/Cartoon Farmer Drawing.png" id="2_vfu74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11ea1"]
-size = Vector2(22.6667, 21.8333)
+size = Vector2(36.3333, 50.3333)
 
-[sub_resource type="Animation" id="Animation_fsa83"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -11)]
-}
-
-[sub_resource type="Animation" id="Animation_irleb"]
-resource_name = "idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0001, 0.2, 0.4, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2.08165e-12, -2), Vector2(2.08165e-12, -5.39203), Vector2(2.08165e-12, -8), Vector2(2.08165e-12, -2), Vector2(2.08165e-12, 6), Vector2(2.08165e-12, -2)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ub5a"]
-_data = {
-"RESET": SubResource("Animation_fsa83"),
-"idle": SubResource("Animation_irleb")
-}
-
-[node name="Player" type="Area2D"]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -11)
 scale = Vector2(3, 3)
 script = ExtResource("1_4pouc")
@@ -53,19 +16,8 @@ metadata/_edit_group_ = true
 texture_filter = 1
 position = Vector2(0, 0.333333)
 scale = Vector2(0.296875, 0.255208)
-texture = ExtResource("3_4duu2")
+texture = ExtResource("2_vfu74")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.333333, 0.333333)
+position = Vector2(-0.5, 0.166668)
 shape = SubResource("RectangleShape2D_11ea1")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_7ub5a")
-}
-
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-enabled = false
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]

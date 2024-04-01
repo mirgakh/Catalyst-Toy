@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8exv6qda8frv"]
+[gd_scene load_steps=10 format=3 uid="uid://b8exv6qda8frv"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7pkgq"]
 [ext_resource type="PackedScene" uid="uid://do5dyd323jmbn" path="res://scenes/world.tscn" id="3_kb2tb"]
 [ext_resource type="PackedScene" uid="uid://bxj0d6wwq7r43" path="res://scenes/carrot_seed.tscn" id="4_q5sp4"]
 [ext_resource type="PackedScene" uid="uid://dac75o0vplr25" path="res://scenes/growing_zone.tscn" id="5_44nqa"]
 [ext_resource type="PackedScene" uid="uid://b32476hejmrnj" path="res://scenes/player.tscn" id="5_hlho5"]
+[ext_resource type="Texture2D" uid="uid://ds02qyek8lddl" path="res://art/Money bag.png" id="5_ql1fd"]
 [ext_resource type="Texture2D" uid="uid://c0ct2r0qghy7t" path="res://art/pngegg (2).png" id="6_cwu1l"]
+[ext_resource type="PackedScene" uid="uid://61cpg07mwmab" path="res://scenes/sell_zone.tscn" id="7_k3gdl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yppqt"]
 animations = [{
@@ -15,6 +17,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Carrot",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ql1fd")
+}],
+"loop": true,
+"name": &"Coin",
 "speed": 0.0
 }]
 
@@ -49,14 +59,9 @@ position = Vector2(368, 84)
 [node name="growingZone8" parent="zones" instance=ExtResource("5_44nqa")]
 position = Vector2(371, 166)
 
-[node name="Player" parent="." instance=ExtResource("5_hlho5")]
-z_index = 1
-scale = Vector2(2, 2)
+[node name="Display" type="Node2D" parent="."]
 
-[node name="carrot_seed" parent="." instance=ExtResource("4_q5sp4")]
-position = Vector2(568, 185)
-
-[node name="CarrotText" type="RichTextLabel" parent="."]
+[node name="CarrotText" type="RichTextLabel" parent="Display"]
 offset_left = 1026.0
 offset_top = 490.0
 offset_right = 1126.0
@@ -65,8 +70,33 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 45
 text = " = 0"
 
-[node name="CarrotIcon" type="AnimatedSprite2D" parent="."]
+[node name="CarrotIcon" type="AnimatedSprite2D" parent="Display"]
 position = Vector2(989.25, 527.25)
 scale = Vector2(2.3, 2.14)
 sprite_frames = SubResource("SpriteFrames_yppqt")
 animation = &"Carrot"
+
+[node name="CoinText" type="RichTextLabel" parent="Display"]
+offset_left = 1031.0
+offset_top = 25.0
+offset_right = 1131.0
+offset_bottom = 91.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = " = 0"
+
+[node name="CoinIcon" type="AnimatedSprite2D" parent="Display"]
+position = Vector2(980, 64)
+scale = Vector2(1.83, 1.81)
+sprite_frames = SubResource("SpriteFrames_yppqt")
+animation = &"Coin"
+
+[node name="carrot_seed" parent="." instance=ExtResource("4_q5sp4")]
+position = Vector2(568, 185)
+
+[node name="sellZone" parent="." instance=ExtResource("7_k3gdl")]
+position = Vector2(366, 507)
+
+[node name="Player" parent="." instance=ExtResource("5_hlho5")]
+z_index = 1
+scale = Vector2(2, 2)

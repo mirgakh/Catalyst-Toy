@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 @export var speed = 150
 
@@ -12,6 +12,9 @@ func _ready():
 func _process(delta):
 	var input = Input.get_vector("left", "right", "up", "down")
 	position += input * speed * delta * 1.5
+	
+func sell():
+	pass
 
 
 	
