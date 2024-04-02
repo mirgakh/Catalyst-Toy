@@ -15,6 +15,9 @@ func _process(delta):
 	
 func sell():
 	pass
+	
+func shop():
+	pass
 
 
 	

@@ -1,0 +1,128 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjwbgmh0x6c28"]
+
+[ext_resource type="Script" path="res://scripts/shopmenu.gd" id="1_iog0v"]
+[ext_resource type="Texture2D" uid="uid://d3c2r6n2443y4" path="res://art/Cherry Fruit Cartoon.png" id="2_glal5"]
+[ext_resource type="Texture2D" uid="uid://dc2ahlufgnrd" path="res://art/Iceberg lettuce Vegetable Salad.png" id="3_i26iw"]
+[ext_resource type="Texture2D" uid="uid://erl1k4j0o51x" path="res://art/Monochrome Left Arrow.png" id="4_eudgi"]
+[ext_resource type="Texture2D" uid="uid://ds02qyek8lddl" path="res://art/Money bag.png" id="4_k2wb2"]
+[ext_resource type="Texture2D" uid="uid://blhtc7htjtnm1" path="res://art/Arrow Symbol.png" id="5_gwbtf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csinh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_glal5")
+}],
+"loop": true,
+"name": &"cherry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i26iw")
+}],
+"loop": true,
+"name": &"lettuce",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csmwe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_eudgi")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_gwbtf")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u6j0y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k2wb2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="shopmenu" type="StaticBody2D"]
+visible = false
+script = ExtResource("1_iog0v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 111.0
+offset_bottom = 62.0
+color = Color(0.368627, 0.368627, 0.368627, 0.6)
+
+[node name="icon" type="AnimatedSprite2D" parent="."]
+position = Vector2(18.5, 17.5)
+scale = Vector2(0.771429, 0.75)
+sprite_frames = SubResource("SpriteFrames_csinh")
+animation = &"lettuce"
+
+[node name="ButtonLeft" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 4.0
+offset_top = 32.0
+offset_right = 21.0
+offset_bottom = 58.0
+
+[node name="iconLeft" type="AnimatedSprite2D" parent="."]
+position = Vector2(13, 48)
+scale = Vector2(0.4, 0.456522)
+sprite_frames = SubResource("SpriteFrames_csmwe")
+animation = &"left"
+
+[node name="ButtonRight" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 23.0
+offset_top = 32.0
+offset_right = 40.0
+offset_bottom = 58.0
+
+[node name="iconRight" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 48)
+scale = Vector2(0.4, 0.456522)
+sprite_frames = SubResource("SpriteFrames_csmwe")
+animation = &"right"
+
+[node name="priceLabel" type="RichTextLabel" parent="."]
+offset_left = 38.0
+offset_top = 4.0
+offset_right = 85.0
+offset_bottom = 29.0
+text = "100"
+
+[node name="moneyIcon" type="AnimatedSprite2D" parent="."]
+position = Vector2(98, 16)
+scale = Vector2(0.46, 0.44)
+sprite_frames = SubResource("SpriteFrames_u6j0y")
+
+[node name="buyColor" type="ColorRect" parent="."]
+offset_left = 53.0
+offset_top = 33.0
+offset_right = 97.0
+offset_bottom = 55.0
+color = Color(1, 0.164706, 0.207843, 0.239216)
+
+[node name="BuyButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 53.0
+offset_top = 33.0
+offset_right = 97.0
+offset_bottom = 55.0
+
+[connection signal="pressed" from="ButtonLeft" to="." method="_on_button_left_pressed"]
+[connection signal="pressed" from="ButtonRight" to="." method="_on_button_right_pressed"]
+[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpd07w37t46ej"]
+
+[ext_resource type="Script" path="res://scripts/apple_seed.gd" id="1_r0xw5"]
+
+[sub_resource type="Gradient" id="Gradient_2gfob"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_m0oou"]
+gradient = SubResource("Gradient_2gfob")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn5q1"]
+size = Vector2(40, 34)
+
+[node name="apple_seed" type="StaticBody2D"]
+script = ExtResource("1_r0xw5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.171875, 35.5)
+texture = SubResource("GradientTexture1D_m0oou")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_vn5q1")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
