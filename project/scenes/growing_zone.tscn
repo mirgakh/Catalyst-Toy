@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://dac75o0vplr25"]
+
+[ext_resource type="Script" path="res://scripts/growing_zone.gd" id="1_htke1"]
+[ext_resource type="Texture2D" uid="uid://m5r6c3amx1h0" path="res://art/Empty.png" id="2_il7q0"]
+[ext_resource type="Texture2D" uid="uid://c0ct2r0qghy7t" path="res://art/pngegg (2).png" id="3_5uqts"]
+[ext_resource type="Texture2D" uid="uid://3oftii0hk3vv" path="res://art/Apple Free.png" id="3_v07cp"]
+[ext_resource type="Texture2D" uid="uid://dc2ahlufgnrd" path="res://art/Iceberg lettuce Vegetable Salad.png" id="5_lnh4e"]
+
+[sub_resource type="Gradient" id="Gradient_w5hoy"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.707797, 0.381725, 5.77569e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ox78v"]
+gradient = SubResource("Gradient_w5hoy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bdaw"]
+size = Vector2(51, 52)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_frojc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_il7q0")
+}],
+"loop": false,
+"name": &"None",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_v07cp")
+}],
+"loop": true,
+"name": &"apple",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5uqts")
+}],
+"loop": true,
+"name": &"carrot",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lnh4e")
+}],
+"loop": true,
+"name": &"lettuce",
+"speed": 5.0
+}]
+
+[node name="growingZone" type="StaticBody2D"]
+script = ExtResource("1_htke1")
+
+[node name="land" type="Sprite2D" parent="."]
+position = Vector2(0, -2.5)
+scale = Vector2(0.254, 65)
+texture = SubResource("GradientTexture1D_ox78v")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_7bdaw")
+
+[node name="plant" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -3)
+scale = Vector2(1.37143, 1.42857)
+sprite_frames = SubResource("SpriteFrames_frojc")
+animation = &"None"
+
+[node name="CarrotTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="AppleTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="lettuceTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="CarrotTimer" to="." method="_on_carrot_timer_timeout"]
+[connection signal="timeout" from="AppleTimer" to="." method="_on_apple_timer_timeout"]
+[connection signal="timeout" from="lettuceTimer" to="." method="_on_lettuce_timer_timeout"]

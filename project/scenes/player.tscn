@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b32476hejmrnj"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_4pouc"]
+[ext_resource type="Texture2D" uid="uid://mw6yoxqq5sp" path="res://art/Cartoon Farmer Drawing.png" id="2_vfu74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ea1"]
+size = Vector2(36.3333, 50.3333)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(0, -11)
+scale = Vector2(3, 3)
+script = ExtResource("1_4pouc")
+metadata/_edit_group_ = true
+
+[node name="Hero" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 0.333333)
+scale = Vector2(0.296875, 0.255208)
+texture = ExtResource("2_vfu74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.166668)
+shape = SubResource("RectangleShape2D_11ea1")

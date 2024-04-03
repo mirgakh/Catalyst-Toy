@@ -1,0 +1,159 @@
+[gd_scene load_steps=14 format=3 uid="uid://b8exv6qda8frv"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_7pkgq"]
+[ext_resource type="PackedScene" uid="uid://do5dyd323jmbn" path="res://scenes/world.tscn" id="3_kb2tb"]
+[ext_resource type="PackedScene" uid="uid://bxj0d6wwq7r43" path="res://scenes/carrot_seed.tscn" id="4_q5sp4"]
+[ext_resource type="PackedScene" uid="uid://dac75o0vplr25" path="res://scenes/growing_zone.tscn" id="5_44nqa"]
+[ext_resource type="PackedScene" uid="uid://b32476hejmrnj" path="res://scenes/player.tscn" id="5_hlho5"]
+[ext_resource type="Texture2D" uid="uid://ds02qyek8lddl" path="res://art/Money bag.png" id="5_ql1fd"]
+[ext_resource type="Texture2D" uid="uid://c0ct2r0qghy7t" path="res://art/pngegg (2).png" id="6_cwu1l"]
+[ext_resource type="Texture2D" uid="uid://3oftii0hk3vv" path="res://art/Apple Free.png" id="6_stvs4"]
+[ext_resource type="Texture2D" uid="uid://dc2ahlufgnrd" path="res://art/Iceberg lettuce Vegetable Salad.png" id="7_4tomd"]
+[ext_resource type="PackedScene" uid="uid://cpd07w37t46ej" path="res://scenes/apple_seed.tscn" id="7_abxn8"]
+[ext_resource type="PackedScene" uid="uid://61cpg07mwmab" path="res://scenes/sell_zone.tscn" id="7_k3gdl"]
+[ext_resource type="PackedScene" uid="uid://bfxaxsgtgoydn" path="res://scenes/shop.tscn" id="10_ea7so"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yppqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_cwu1l")
+}],
+"loop": true,
+"name": &"Carrot",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ql1fd")
+}],
+"loop": true,
+"name": &"Coin",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_stvs4")
+}],
+"loop": true,
+"name": &"apple",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4tomd")
+}],
+"loop": true,
+"name": &"lettuce",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_7pkgq")
+
+[node name="World" parent="." instance=ExtResource("3_kb2tb")]
+
+[node name="zones" type="Node2D" parent="."]
+
+[node name="growingZone" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(92, 84)
+
+[node name="growingZone2" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(95, 166)
+
+[node name="growingZone3" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(186, 84)
+
+[node name="growingZone4" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(189, 166)
+
+[node name="growingZone5" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(274, 84)
+
+[node name="growingZone6" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(277, 166)
+
+[node name="growingZone7" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(368, 84)
+
+[node name="growingZone8" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(371, 166)
+
+[node name="Display" type="Node2D" parent="."]
+
+[node name="CarrotText" type="RichTextLabel" parent="Display"]
+offset_left = 1026.0
+offset_top = 490.0
+offset_right = 1126.0
+offset_bottom = 556.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = " = 0"
+
+[node name="CarrotIcon" type="AnimatedSprite2D" parent="Display"]
+position = Vector2(989.25, 527.25)
+scale = Vector2(2.3, 2.14)
+sprite_frames = SubResource("SpriteFrames_yppqt")
+animation = &"Carrot"
+
+[node name="appleText" type="RichTextLabel" parent="Display"]
+offset_left = 1023.0
+offset_top = 556.0
+offset_right = 1123.0
+offset_bottom = 622.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = " = 0"
+
+[node name="appleIcon" type="AnimatedSprite2D" parent="Display"]
+position = Vector2(981, 590)
+scale = Vector2(1.57482, 1.55875)
+sprite_frames = SubResource("SpriteFrames_yppqt")
+animation = &"apple"
+
+[node name="lettuceText" type="RichTextLabel" parent="Display"]
+offset_left = 1027.0
+offset_top = 423.0
+offset_right = 1127.0
+offset_bottom = 489.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = " = 0"
+
+[node name="lettuceIcon" type="AnimatedSprite2D" parent="Display"]
+position = Vector2(1002, 457)
+scale = Vector2(1.57482, 1.55875)
+sprite_frames = SubResource("SpriteFrames_yppqt")
+animation = &"lettuce"
+
+[node name="CoinText" type="RichTextLabel" parent="Display"]
+offset_left = 999.0
+offset_top = 26.0
+offset_right = 1152.0
+offset_bottom = 92.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = " = 0"
+
+[node name="CoinIcon" type="AnimatedSprite2D" parent="Display"]
+position = Vector2(944, 64)
+scale = Vector2(1.83, 1.81)
+sprite_frames = SubResource("SpriteFrames_yppqt")
+animation = &"Coin"
+
+[node name="carrot_seed" parent="." instance=ExtResource("4_q5sp4")]
+position = Vector2(568, 185)
+
+[node name="apple_seed" parent="." instance=ExtResource("7_abxn8")]
+position = Vector2(554, 133)
+
+[node name="sellZone" parent="." instance=ExtResource("7_k3gdl")]
+position = Vector2(366, 507)
+
+[node name="shop" parent="." instance=ExtResource("10_ea7so")]
+position = Vector2(727, 229)
+
+[node name="Player" parent="." instance=ExtResource("5_hlho5")]
+z_index = 1
+position = Vector2(680, 497)
+scale = Vector2(2, 2)
