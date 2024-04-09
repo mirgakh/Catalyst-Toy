@@ -35,6 +35,7 @@ func _on_buy_button_pressed():
 		if Global.coins >= price:
 			if itemOwned[0] == false:
 				buy()
+	
 	elif item == 2:
 		price = itemPrices[1]
 		if Global.coins >= price:

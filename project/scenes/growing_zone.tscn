@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dac75o0vplr25"]
+[gd_scene load_steps=11 format=3 uid="uid://dac75o0vplr25"]
 
 [ext_resource type="Script" path="res://scripts/growing_zone.gd" id="1_htke1"]
 [ext_resource type="Texture2D" uid="uid://m5r6c3amx1h0" path="res://art/Empty.png" id="2_il7q0"]
 [ext_resource type="Texture2D" uid="uid://c0ct2r0qghy7t" path="res://art/pngegg (2).png" id="3_5uqts"]
 [ext_resource type="Texture2D" uid="uid://3oftii0hk3vv" path="res://art/Apple Free.png" id="3_v07cp"]
 [ext_resource type="Texture2D" uid="uid://dc2ahlufgnrd" path="res://art/Iceberg lettuce Vegetable Salad.png" id="5_lnh4e"]
+[ext_resource type="Texture2D" uid="uid://d3c2r6n2443y4" path="res://art/Cherry Fruit Cartoon.png" id="5_wuagf"]
 
 [sub_resource type="Gradient" id="Gradient_w5hoy"]
 offsets = PackedFloat32Array(0)
@@ -44,6 +45,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_wuagf")
+}],
+"loop": true,
+"name": &"cherry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_lnh4e")
 }],
 "loop": true,
@@ -80,8 +89,12 @@ wait_time = 5.0
 [node name="lettuceTimer" type="Timer" parent="."]
 wait_time = 5.0
 
+[node name="cherryTimer" type="Timer" parent="."]
+wait_time = 5.0
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="CarrotTimer" to="." method="_on_carrot_timer_timeout"]
 [connection signal="timeout" from="AppleTimer" to="." method="_on_apple_timer_timeout"]
 [connection signal="timeout" from="lettuceTimer" to="." method="_on_lettuce_timer_timeout"]
+[connection signal="timeout" from="cherryTimer" to="." method="_on_cherry_timer_timeout"]

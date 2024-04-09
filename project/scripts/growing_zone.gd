@@ -23,6 +23,10 @@ func _on_area_2d_area_entered(area):
 			plantGrowing = true
 			$lettuceTimer.start()
 			$plant.play("lettuce")
+		if plant == 4:
+			plantGrowing = true
+			$cherryTimer.start()
+			$plant.play("cherry")
 			
 	else:
 		print("plant is already growing here")
@@ -42,6 +46,11 @@ func _on_apple_timer_timeout():
 func _on_lettuce_timer_timeout():
 	var lettuce_plant = $plant
 	if lettuce_plant.frame == 0:
+		plant_grown = true
+
+func _on_cherry_timer_timeout():
+	var cherry_plant = $plant
+	if cherry_plant.frame == 0:
 		plant_grown = true
 
 
@@ -65,7 +74,12 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 				plantGrowing = false
 				plant_grown = false
 				$plant.play("None")
-
+			
+			if plant == 4:
+				Global.numofcherries += 1
+				plantGrowing = false
+				plant_grown = false
+				$plant.play("None")
 
 
 
