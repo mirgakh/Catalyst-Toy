@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scripts/lettuce_seed.gd" id="1_d455a"]
 
-[sub_resource type="Gradient" id="Gradient_h4jhf"]
+[sub_resource type="Gradient" id="Gradient_ar11r"]
 offsets = PackedFloat32Array(0.00324675)
 colors = PackedColorArray(0.412683, 0.755698, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_3wgms"]
-gradient = SubResource("Gradient_h4jhf")
+gradient = SubResource("Gradient_ar11r")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udp3d"]
 size = Vector2(40, 34)

@@ -6,6 +6,9 @@ func _ready():
 func _physics_process(delta):
 	if $shopmenu.itemOwned[0] == true:
 		$lettuce_seed.visible = true
+	if $shopmenu.itemOwned[1] == true:
+		$cherry_seed.visible = true
+	
 	
 func _on_area_2d_body_entered(body):
 	if body.has_method("shop"):
