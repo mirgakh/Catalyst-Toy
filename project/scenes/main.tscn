@@ -56,28 +56,76 @@ script = ExtResource("1_7pkgq")
 [node name="zones" type="Node2D" parent="."]
 
 [node name="growingZone" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(92, 84)
+position = Vector2(107, 77)
 
 [node name="growingZone2" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(95, 166)
+position = Vector2(110, 159)
 
 [node name="growingZone3" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(186, 84)
+position = Vector2(201, 77)
 
 [node name="growingZone4" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(189, 166)
+position = Vector2(204, 159)
 
 [node name="growingZone5" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(274, 84)
+position = Vector2(289, 77)
 
 [node name="growingZone6" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(277, 166)
+position = Vector2(292, 159)
 
 [node name="growingZone7" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(368, 84)
+position = Vector2(383, 77)
 
 [node name="growingZone8" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(371, 166)
+position = Vector2(386, 159)
+
+[node name="growingZone9" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(111, 285)
+
+[node name="growingZone10" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(114, 367)
+
+[node name="growingZone11" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(205, 285)
+
+[node name="growingZone12" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(208, 367)
+
+[node name="growingZone13" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(293, 285)
+
+[node name="growingZone14" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(296, 367)
+
+[node name="growingZone15" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(387, 285)
+
+[node name="growingZone16" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(390, 367)
+
+[node name="growingZone17" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(113, 495)
+
+[node name="growingZone18" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(116, 577)
+
+[node name="growingZone19" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(207, 495)
+
+[node name="growingZone20" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(210, 577)
+
+[node name="growingZone21" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(295, 495)
+
+[node name="growingZone22" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(298, 577)
+
+[node name="growingZone23" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(389, 495)
+
+[node name="growingZone24" parent="zones" instance=ExtResource("5_44nqa")]
+position = Vector2(392, 577)
 
 [node name="Display" type="Node2D" parent="."]
 
@@ -148,12 +196,12 @@ position = Vector2(568, 185)
 position = Vector2(554, 133)
 
 [node name="sellZone" parent="." instance=ExtResource("7_k3gdl")]
-position = Vector2(366, 507)
+position = Vector2(810, 529)
 
 [node name="shop" parent="." instance=ExtResource("10_ea7so")]
-position = Vector2(727, 229)
+position = Vector2(802, 114)
 
 [node name="Player" parent="." instance=ExtResource("5_hlho5")]
 z_index = 1
-position = Vector2(680, 497)
+position = Vector2(703, 364)
 scale = Vector2(2, 2)

@@ -24,18 +24,18 @@ scale = Vector2(10.5508, 1599)
 texture = SubResource("GradientTexture1D_7y04d")
 
 [node name="Farm" type="Sprite2D" parent="Background"]
-position = Vector2(234, 126)
-scale = Vector2(1.6, 200)
+position = Vector2(249, 113.25)
+scale = Vector2(1.5, 170.5)
 texture = SubResource("GradientTexture1D_hk3i5")
 
-[node name="Shop" type="RichTextLabel" parent="Background"]
-visible = false
-offset_left = 750.0
-offset_top = 48.0
-offset_right = 922.0
-offset_bottom = 144.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 64
-text = "Shop"
+[node name="Farm2" type="Sprite2D" parent="Background"]
+position = Vector2(251, 322.25)
+scale = Vector2(1.5, 170.5)
+texture = SubResource("GradientTexture1D_hk3i5")
+
+[node name="Farm3" type="Sprite2D" parent="Background"]
+position = Vector2(254, 532.25)
+scale = Vector2(1.5, 170.5)
+texture = SubResource("GradientTexture1D_hk3i5")
 
 [node name="Foreground" type="Node2D" parent="."]
