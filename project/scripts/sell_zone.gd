@@ -9,10 +9,10 @@ func _on_area_2d_body_entered(body):
 		var cherries = Global.numofcherries
 		var coins = Global.coins
 		
-		coins += carrots * 5
-		coins += apples * 8
-		coins += lettuce * 10
-		coins += cherries * 15
+		coins += carrots * 8
+		coins += apples * 12
+		coins += lettuce * 15
+		coins += cherries * 20
 		
 		carrots = 0
 		apples = 0

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scripts/carrot_seed.gd" id="1_5xp4o"]
 
-[sub_resource type="Gradient" id="Gradient_lcgqy"]
+[sub_resource type="Gradient" id="Gradient_f6d6j"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.886275, 0.576471, 0, 1)
+colors = PackedColorArray(1, 0.52549, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jdg2k"]
-gradient = SubResource("Gradient_lcgqy")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bj2t2"]
+gradient = SubResource("Gradient_f6d6j")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_268u4"]
 size = Vector2(40, 34)
@@ -17,7 +17,7 @@ script = ExtResource("1_5xp4o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.15625, 33.75)
-texture = SubResource("GradientTexture1D_jdg2k")
+texture = SubResource("GradientTexture1D_bj2t2")
 
 [node name="Area2D" type="Area2D" parent="."]
 

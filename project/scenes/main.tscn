@@ -1,24 +1,37 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8exv6qda8frv"]
+[gd_scene load_steps=16 format=3 uid="uid://b8exv6qda8frv"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7pkgq"]
 [ext_resource type="PackedScene" uid="uid://do5dyd323jmbn" path="res://scenes/world.tscn" id="3_kb2tb"]
+[ext_resource type="Texture2D" uid="uid://by0hxfnc1shcq" path="res://art/2px All.png" id="4_1tlbv"]
 [ext_resource type="PackedScene" uid="uid://bxj0d6wwq7r43" path="res://scenes/carrot_seed.tscn" id="4_q5sp4"]
 [ext_resource type="PackedScene" uid="uid://dac75o0vplr25" path="res://scenes/growing_zone.tscn" id="5_44nqa"]
 [ext_resource type="PackedScene" uid="uid://b32476hejmrnj" path="res://scenes/player.tscn" id="5_hlho5"]
 [ext_resource type="Texture2D" uid="uid://ds02qyek8lddl" path="res://art/Money bag.png" id="5_ql1fd"]
-[ext_resource type="Texture2D" uid="uid://c0ct2r0qghy7t" path="res://art/pngegg (2).png" id="6_cwu1l"]
-[ext_resource type="Texture2D" uid="uid://3oftii0hk3vv" path="res://art/Apple Free.png" id="6_stvs4"]
-[ext_resource type="Texture2D" uid="uid://dc2ahlufgnrd" path="res://art/Iceberg lettuce Vegetable Salad.png" id="7_4tomd"]
 [ext_resource type="PackedScene" uid="uid://cpd07w37t46ej" path="res://scenes/apple_seed.tscn" id="7_abxn8"]
 [ext_resource type="PackedScene" uid="uid://61cpg07mwmab" path="res://scenes/sell_zone.tscn" id="7_k3gdl"]
-[ext_resource type="Texture2D" uid="uid://d3c2r6n2443y4" path="res://art/Cherry Fruit Cartoon.png" id="7_x7ygr"]
 [ext_resource type="PackedScene" uid="uid://bfxaxsgtgoydn" path="res://scenes/shop.tscn" id="10_ea7so"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo8aj"]
+atlas = ExtResource("4_1tlbv")
+region = Rect2(19, 54, 17, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk8j4"]
+atlas = ExtResource("4_1tlbv")
+region = Rect2(86, 108, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xke58"]
+atlas = ExtResource("4_1tlbv")
+region = Rect2(115, 81, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1vln"]
+atlas = ExtResource("4_1tlbv")
+region = Rect2(2, 108, 20, 27)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yppqt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_cwu1l")
+"texture": SubResource("AtlasTexture_xo8aj")
 }],
 "loop": true,
 "name": &"Carrot",
@@ -34,7 +47,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_stvs4")
+"texture": SubResource("AtlasTexture_nk8j4")
 }],
 "loop": true,
 "name": &"apple",
@@ -42,7 +55,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_x7ygr")
+"texture": SubResource("AtlasTexture_xke58")
 }],
 "loop": true,
 "name": &"cherry",
@@ -50,7 +63,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_4tomd")
+"texture": SubResource("AtlasTexture_s1vln")
 }],
 "loop": true,
 "name": &"lettuce",
@@ -60,170 +73,170 @@ animations = [{
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7pkgq")
 
-[node name="World" parent="." instance=ExtResource("3_kb2tb")]
+[node name="world" parent="." instance=ExtResource("3_kb2tb")]
 
 [node name="zones" type="Node2D" parent="."]
 
 [node name="growingZone" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(107, 77)
+position = Vector2(99, 87)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone2" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(110, 159)
+position = Vector2(102, 160)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone3" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(201, 77)
+position = Vector2(193, 87)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone4" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(204, 159)
+position = Vector2(196, 160)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone5" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(289, 77)
+position = Vector2(281, 87)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone6" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(292, 159)
+position = Vector2(284, 160)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone7" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(383, 77)
+position = Vector2(98, 279)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone8" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(386, 159)
+position = Vector2(101, 352)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone9" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(111, 285)
+position = Vector2(192, 279)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone10" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(114, 367)
+position = Vector2(195, 352)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone11" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(205, 285)
+position = Vector2(280, 279)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone12" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(208, 367)
+position = Vector2(283, 352)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone13" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(293, 285)
+position = Vector2(96, 470)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone14" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(296, 367)
+position = Vector2(99, 543)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone15" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(387, 285)
+position = Vector2(190, 470)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone16" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(390, 367)
+position = Vector2(193, 543)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone17" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(113, 495)
+position = Vector2(278, 470)
+scale = Vector2(0.9, 0.9)
 
 [node name="growingZone18" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(116, 577)
-
-[node name="growingZone19" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(207, 495)
-
-[node name="growingZone20" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(210, 577)
-
-[node name="growingZone21" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(295, 495)
-
-[node name="growingZone22" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(298, 577)
-
-[node name="growingZone23" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(389, 495)
-
-[node name="growingZone24" parent="zones" instance=ExtResource("5_44nqa")]
-position = Vector2(392, 577)
+position = Vector2(281, 543)
+scale = Vector2(0.9, 0.9)
 
 [node name="Display" type="Node2D" parent="."]
 
 [node name="CarrotText" type="RichTextLabel" parent="Display"]
-offset_left = 1026.0
-offset_top = 490.0
-offset_right = 1126.0
-offset_bottom = 556.0
+offset_left = 1049.0
+offset_top = 506.0
+offset_right = 1149.0
+offset_bottom = 572.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 45
 text = " = 0"
 
 [node name="CarrotIcon" type="AnimatedSprite2D" parent="Display"]
-position = Vector2(989.25, 527.25)
+position = Vector2(1026.4, 529.522)
 scale = Vector2(2.3, 2.14)
 sprite_frames = SubResource("SpriteFrames_yppqt")
 animation = &"Carrot"
 
 [node name="appleText" type="RichTextLabel" parent="Display"]
-offset_left = 1023.0
-offset_top = 556.0
-offset_right = 1123.0
-offset_bottom = 622.0
+offset_left = 1048.0
+offset_top = 571.0
+offset_right = 1148.0
+offset_bottom = 637.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 45
 text = " = 0"
 
 [node name="appleIcon" type="AnimatedSprite2D" parent="Display"]
-position = Vector2(981, 590)
-scale = Vector2(1.57482, 1.55875)
+position = Vector2(1024.4, 596.522)
+scale = Vector2(2.15583, 1.81641)
 sprite_frames = SubResource("SpriteFrames_yppqt")
 animation = &"apple"
 
 [node name="lettuceText" type="RichTextLabel" parent="Display"]
-offset_left = 1027.0
-offset_top = 423.0
-offset_right = 1127.0
-offset_bottom = 489.0
+offset_left = 1051.0
+offset_top = 441.0
+offset_right = 1151.0
+offset_bottom = 507.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 45
 text = " = 0"
 
 [node name="lettuceIcon" type="AnimatedSprite2D" parent="Display"]
-position = Vector2(1002, 457)
-scale = Vector2(1.57482, 1.55875)
+position = Vector2(1026.4, 469.521)
+scale = Vector2(1.83741, 1.7053)
 sprite_frames = SubResource("SpriteFrames_yppqt")
 animation = &"lettuce"
 
 [node name="cherryText" type="RichTextLabel" parent="Display"]
-offset_left = 1030.0
-offset_top = 370.0
-offset_right = 1130.0
-offset_bottom = 436.0
+offset_left = 1054.0
+offset_top = 388.0
+offset_right = 1154.0
+offset_bottom = 454.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 45
 text = " = 0"
 
 [node name="cherryIcon" type="AnimatedSprite2D" parent="Display"]
-position = Vector2(1000, 398)
-scale = Vector2(1.57482, 1.55875)
+position = Vector2(1030.4, 411.522)
+scale = Vector2(2.12074, 1.96456)
 sprite_frames = SubResource("SpriteFrames_yppqt")
 animation = &"cherry"
 
 [node name="CoinText" type="RichTextLabel" parent="Display"]
-offset_left = 999.0
-offset_top = 26.0
-offset_right = 1152.0
-offset_bottom = 92.0
+offset_left = 1070.0
+offset_top = 8.675
+offset_right = 1198.0
+offset_bottom = 59.675
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 45
+theme_override_font_sizes/normal_font_size = 25
 text = " = 0"
 
 [node name="CoinIcon" type="AnimatedSprite2D" parent="Display"]
-position = Vector2(944, 64)
-scale = Vector2(1.83, 1.81)
+position = Vector2(1044, 31.675)
+scale = Vector2(1, 0.947)
 sprite_frames = SubResource("SpriteFrames_yppqt")
 animation = &"Coin"
 
 [node name="carrot_seed" parent="." instance=ExtResource("4_q5sp4")]
-position = Vector2(568, 185)
+position = Vector2(751, 95)
 
 [node name="apple_seed" parent="." instance=ExtResource("7_abxn8")]
-position = Vector2(554, 133)
+position = Vector2(751, 52)
 
 [node name="sellZone" parent="." instance=ExtResource("7_k3gdl")]
 position = Vector2(810, 529)
 
 [node name="shop" parent="." instance=ExtResource("10_ea7so")]
-position = Vector2(802, 114)
+position = Vector2(915, 52)
 
 [node name="Player" parent="." instance=ExtResource("5_hlho5")]
 z_index = 1

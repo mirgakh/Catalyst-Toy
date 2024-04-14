@@ -1,16 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfxaxsgtgoydn"]
+[gd_scene load_steps=10 format=3 uid="uid://bfxaxsgtgoydn"]
 
 [ext_resource type="Script" path="res://scripts/shop.gd" id="1_ahsaf"]
-[ext_resource type="Texture2D" uid="uid://cu7net8spupxg" path="res://art/Adobe Illustrator Tutorial Logo.png" id="2_6d2hq"]
+[ext_resource type="Texture2D" uid="uid://baqpx54xqy277" path="res://art/free.png" id="2_fevx3"]
 [ext_resource type="PackedScene" uid="uid://dgmkbdreonlkp" path="res://scenes/lettuce_seed.tscn" id="3_5cn8h"]
 [ext_resource type="PackedScene" uid="uid://cjwbgmh0x6c28" path="res://scenes/shopmenu.tscn" id="4_1v8ki"]
 [ext_resource type="PackedScene" uid="uid://0nk338vua7ni" path="res://scenes/cherry_seed.tscn" id="5_oirm5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fus1k"]
+atlas = ExtResource("2_fevx3")
+region = Rect2(67, 53, 75, 75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7mw06"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6d2hq")
+"texture": SubResource("AtlasTexture_fus1k")
 }],
 "loop": true,
 "name": &"shop",
@@ -18,7 +22,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wd2j"]
-size = Vector2(150, 126)
+size = Vector2(190, 174)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v8poo"]
 radius = 72.0
@@ -28,12 +32,13 @@ height = 198.0
 script = ExtResource("1_ahsaf")
 
 [node name="ShopArt" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 1.868)
+position = Vector2(2.99999, -17.475)
+scale = Vector2(2.56, 2.334)
 sprite_frames = SubResource("SpriteFrames_7mw06")
 animation = &"shop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -7)
+position = Vector2(2, -17)
 shape = SubResource("RectangleShape2D_0wd2j")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -43,16 +48,16 @@ position = Vector2(0, 95)
 shape = SubResource("CapsuleShape2D_v8poo")
 
 [node name="shopmenu" parent="." instance=ExtResource("4_1v8ki")]
-position = Vector2(122, 7)
-scale = Vector2(2, 2)
+position = Vector2(123, 32)
+scale = Vector2(1.5, 1.5)
 
 [node name="lettuce_seed" parent="." instance=ExtResource("3_5cn8h")]
 visible = false
-position = Vector2(-154, 116)
+position = Vector2(-175, 82)
 
 [node name="cherry_seed" parent="." instance=ExtResource("5_oirm5")]
 visible = false
-position = Vector2(-160, 109)
+position = Vector2(-176, 137)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
