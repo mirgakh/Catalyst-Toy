@@ -1,21 +1,66 @@
-[gd_scene load_steps=11 format=3 uid="uid://dac75o0vplr25"]
+[gd_scene load_steps=20 format=3 uid="uid://dac75o0vplr25"]
 
 [ext_resource type="Script" path="res://scripts/growing_zone.gd" id="1_htke1"]
 [ext_resource type="Texture2D" uid="uid://m5r6c3amx1h0" path="res://art/Empty.png" id="2_il7q0"]
-[ext_resource type="Texture2D" uid="uid://c0ct2r0qghy7t" path="res://art/pngegg (2).png" id="3_5uqts"]
-[ext_resource type="Texture2D" uid="uid://3oftii0hk3vv" path="res://art/Apple Free.png" id="3_v07cp"]
-[ext_resource type="Texture2D" uid="uid://dc2ahlufgnrd" path="res://art/Iceberg lettuce Vegetable Salad.png" id="5_lnh4e"]
-[ext_resource type="Texture2D" uid="uid://d3c2r6n2443y4" path="res://art/Cherry Fruit Cartoon.png" id="5_wuagf"]
+[ext_resource type="Texture2D" uid="uid://by0hxfnc1shcq" path="res://art/2px All.png" id="3_fml78"]
 
 [sub_resource type="Gradient" id="Gradient_w5hoy"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.707797, 0.381725, 5.77569e-07, 1)
+colors = PackedColorArray(0.50036, 0.262788, 1.92523e-07, 0.631373)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ox78v"]
 gradient = SubResource("Gradient_w5hoy")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bdaw"]
 size = Vector2(51, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0uj7"]
+atlas = ExtResource("3_fml78")
+region = Rect2(208, 114, 13, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wb8k"]
+atlas = ExtResource("3_fml78")
+region = Rect2(5, 81, 16, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t8ws"]
+atlas = ExtResource("3_fml78")
+region = Rect2(85, 108, 19, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi4wh"]
+atlas = ExtResource("3_fml78")
+region = Rect2(128, 108, 16, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyrmg"]
+atlas = ExtResource("3_fml78")
+region = Rect2(156, 84, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7igtp"]
+atlas = ExtResource("3_fml78")
+region = Rect2(18, 54, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndiqq"]
+atlas = ExtResource("3_fml78")
+region = Rect2(25, 0, 19, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxayq"]
+atlas = ExtResource("3_fml78")
+region = Rect2(144, 108, 16, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5jla"]
+atlas = ExtResource("3_fml78")
+region = Rect2(114, 81, 19, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erv23"]
+atlas = ExtResource("3_fml78")
+region = Rect2(21, 90, 10, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er0gf"]
+atlas = ExtResource("3_fml78")
+region = Rect2(157, 31, 19, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sit7k"]
+atlas = ExtResource("3_fml78")
+region = Rect2(3, 108, 20, 27)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_frojc"]
 animations = [{
@@ -29,7 +74,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_v07cp")
+"texture": SubResource("AtlasTexture_u0uj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wb8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t8ws")
 }],
 "loop": true,
 "name": &"apple",
@@ -37,7 +88,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_5uqts")
+"texture": SubResource("AtlasTexture_xi4wh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyrmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7igtp")
 }],
 "loop": true,
 "name": &"carrot",
@@ -45,19 +102,31 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_wuagf")
+"texture": SubResource("AtlasTexture_ndiqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxayq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5jla")
 }],
 "loop": true,
 "name": &"cherry",
-"speed": 5.0
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_lnh4e")
+"texture": SubResource("AtlasTexture_erv23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er0gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sit7k")
 }],
 "loop": true,
 "name": &"lettuce",
-"speed": 5.0
+"speed": 0.0
 }]
 
 [node name="growingZone" type="StaticBody2D"]
@@ -75,22 +144,22 @@ position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_7bdaw")
 
 [node name="plant" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -3)
-scale = Vector2(1.37143, 1.42857)
+position = Vector2(9.53674e-07, -3)
+scale = Vector2(2.52632, 2)
 sprite_frames = SubResource("SpriteFrames_frojc")
 animation = &"None"
 
 [node name="CarrotTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 
 [node name="AppleTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 4.0
 
 [node name="lettuceTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 6.0
 
 [node name="cherryTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 8.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

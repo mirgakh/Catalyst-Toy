@@ -35,22 +35,39 @@ func _on_area_2d_area_entered(area):
 func _on_carrot_timer_timeout():
 	var carrot_plant = $plant
 	if carrot_plant.frame == 0:
+		carrot_plant.frame = 1
+		$CarrotTimer.start()
+	elif carrot_plant.frame == 1:
+		carrot_plant.frame = 2
 		plant_grown = true
+
 
 
 func _on_apple_timer_timeout():
 	var apple_plant = $plant
 	if apple_plant.frame == 0:
+		apple_plant.frame = 1
+		$AppleTimer.start()
+	elif apple_plant.frame == 1:
+		apple_plant.frame = 2
 		plant_grown = true
 
 func _on_lettuce_timer_timeout():
 	var lettuce_plant = $plant
 	if lettuce_plant.frame == 0:
+		lettuce_plant.frame = 1
+		$lettuceTimer.start()
+	elif lettuce_plant.frame == 1:
+		lettuce_plant.frame = 2
 		plant_grown = true
 
 func _on_cherry_timer_timeout():
 	var cherry_plant = $plant
 	if cherry_plant.frame == 0:
+		cherry_plant.frame = 1
+		$cherryTimer.start()
+	elif cherry_plant.frame == 1:
+		cherry_plant.frame = 2
 		plant_grown = true
 
 
