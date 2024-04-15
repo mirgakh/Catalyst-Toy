@@ -1,17 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjwbgmh0x6c28"]
+[gd_scene load_steps=11 format=3 uid="uid://cjwbgmh0x6c28"]
 
 [ext_resource type="Script" path="res://scripts/shopmenu.gd" id="1_iog0v"]
-[ext_resource type="Texture2D" uid="uid://d3c2r6n2443y4" path="res://art/Cherry Fruit Cartoon.png" id="2_glal5"]
-[ext_resource type="Texture2D" uid="uid://dc2ahlufgnrd" path="res://art/Iceberg lettuce Vegetable Salad.png" id="3_i26iw"]
+[ext_resource type="Texture2D" uid="uid://by0hxfnc1shcq" path="res://art/2px All.png" id="2_qhxup"]
 [ext_resource type="Texture2D" uid="uid://erl1k4j0o51x" path="res://art/Monochrome Left Arrow.png" id="4_eudgi"]
 [ext_resource type="Texture2D" uid="uid://ds02qyek8lddl" path="res://art/Money bag.png" id="4_k2wb2"]
 [ext_resource type="Texture2D" uid="uid://blhtc7htjtnm1" path="res://art/Arrow Symbol.png" id="5_gwbtf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30ymu"]
+atlas = ExtResource("2_qhxup")
+region = Rect2(115, 81, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb8qt"]
+atlas = ExtResource("2_qhxup")
+region = Rect2(2, 108, 20, 27)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_csinh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_glal5")
+"texture": SubResource("AtlasTexture_30ymu")
 }],
 "loop": true,
 "name": &"cherry",
@@ -19,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_i26iw")
+"texture": SubResource("AtlasTexture_kb8qt")
 }],
 "loop": true,
 "name": &"lettuce",
@@ -69,7 +76,7 @@ color = Color(0.368627, 0.368627, 0.368627, 0.6)
 position = Vector2(32, 19.125)
 scale = Vector2(0.771429, 0.75)
 sprite_frames = SubResource("SpriteFrames_csinh")
-animation = &"lettuce"
+animation = &"cherry"
 
 [node name="ButtonLeft" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
