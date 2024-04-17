@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bk5so6c7cu0x0"
+path="res://.godot/imported/Money Sound 7053.mp3-34c0aeb6208e619bb5b69794175d4d81.mp3str"
+
+[deps]
+
+source_file="res://sounds/Money Sound 7053.mp3"
+dest_files=["res://.godot/imported/Money Sound 7053.mp3-34c0aeb6208e619bb5b69794175d4d81.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

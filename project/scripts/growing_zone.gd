@@ -11,6 +11,7 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if not plantGrowing:
+		$CropSound.play()
 		if plant == 1:
 			plantGrowing = true
 			$CarrotTimer.start()
@@ -74,6 +75,7 @@ func _on_cherry_timer_timeout():
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		if plant_grown:
+			$CropSound.play()
 			if plant == 1:
 				Global.numofcarrots += 1
 				plantGrowing = false

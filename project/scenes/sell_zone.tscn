@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://61cpg07mwmab"]
+[gd_scene load_steps=4 format=3 uid="uid://61cpg07mwmab"]
 
 [ext_resource type="Script" path="res://scripts/sell_zone.gd" id="1_j7eru"]
+[ext_resource type="AudioStream" uid="uid://bk5so6c7cu0x0" path="res://sounds/Money Sound 7053.mp3" id="2_cbf0k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bie6t"]
 radius = 112.51
@@ -22,5 +23,8 @@ offset_bottom = 54.0
 theme_override_colors/default_color = Color(1, 0.717647, 0, 1)
 theme_override_font_sizes/normal_font_size = 60
 text = "Sell"
+
+[node name="ChaChing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_cbf0k")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

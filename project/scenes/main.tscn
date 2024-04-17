@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b8exv6qda8frv"]
+[gd_scene load_steps=17 format=3 uid="uid://b8exv6qda8frv"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7pkgq"]
 [ext_resource type="PackedScene" uid="uid://do5dyd323jmbn" path="res://scenes/world.tscn" id="3_kb2tb"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cpd07w37t46ej" path="res://scenes/apple_seed.tscn" id="7_abxn8"]
 [ext_resource type="PackedScene" uid="uid://61cpg07mwmab" path="res://scenes/sell_zone.tscn" id="7_k3gdl"]
 [ext_resource type="PackedScene" uid="uid://bfxaxsgtgoydn" path="res://scenes/shop.tscn" id="10_ea7so"]
+[ext_resource type="AudioStream" uid="uid://c4cvrd0ilfk7d" path="res://sounds/Background Music 1.mp3" id="14_j1m62"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xo8aj"]
 atlas = ExtResource("4_1tlbv")
@@ -242,3 +243,8 @@ position = Vector2(915, 52)
 z_index = 1
 position = Vector2(703, 364)
 scale = Vector2(2, 2)
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_j1m62")
+volume_db = -14.931
+autoplay = true

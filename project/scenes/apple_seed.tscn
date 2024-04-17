@@ -10,7 +10,7 @@ colors = PackedColorArray(1, 0, 0, 1)
 gradient = SubResource("Gradient_2gfob")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vn5q1"]
-size = Vector2(40, 34)
+size = Vector2(28, 24)
 
 [node name="apple_seed" type="StaticBody2D"]
 script = ExtResource("1_r0xw5")
@@ -23,7 +23,7 @@ texture = SubResource("GradientTexture1D_m0oou")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -1)
+position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_vn5q1")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
