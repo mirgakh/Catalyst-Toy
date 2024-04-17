@@ -1,24 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjwbgmh0x6c28"]
+[gd_scene load_steps=12 format=3 uid="uid://cjwbgmh0x6c28"]
 
 [ext_resource type="Script" path="res://scripts/shopmenu.gd" id="1_iog0v"]
 [ext_resource type="Texture2D" uid="uid://by0hxfnc1shcq" path="res://art/2px All.png" id="2_qhxup"]
 [ext_resource type="Texture2D" uid="uid://erl1k4j0o51x" path="res://art/Monochrome Left Arrow.png" id="4_eudgi"]
 [ext_resource type="Texture2D" uid="uid://ds02qyek8lddl" path="res://art/Money bag.png" id="4_k2wb2"]
 [ext_resource type="Texture2D" uid="uid://blhtc7htjtnm1" path="res://art/Arrow Symbol.png" id="5_gwbtf"]
+[ext_resource type="AudioStream" uid="uid://dpmvx6t8ohffw" path="res://sounds/Button Click Sound.mp3" id="7_0off3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_30ymu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ty8y"]
 atlas = ExtResource("2_qhxup")
-region = Rect2(115, 81, 18, 27)
+region = Rect2(116, 81, 16, 27)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kb8qt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn4wx"]
 atlas = ExtResource("2_qhxup")
-region = Rect2(2, 108, 20, 27)
+region = Rect2(5, 108, 16, 27)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_csinh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_30ymu")
+"texture": SubResource("AtlasTexture_5ty8y")
 }],
 "loop": true,
 "name": &"cherry",
@@ -26,7 +27,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kb8qt")
+"texture": SubResource("AtlasTexture_vn4wx")
 }],
 "loop": true,
 "name": &"lettuce",
@@ -64,7 +65,6 @@ animations = [{
 }]
 
 [node name="shopmenu" type="StaticBody2D"]
-visible = false
 script = ExtResource("1_iog0v")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -73,10 +73,10 @@ offset_bottom = 106.0
 color = Color(0.368627, 0.368627, 0.368627, 0.6)
 
 [node name="icon" type="AnimatedSprite2D" parent="."]
-position = Vector2(32, 19.125)
-scale = Vector2(0.771429, 0.75)
+position = Vector2(31, 19)
+scale = Vector2(1.13571, 1)
 sprite_frames = SubResource("SpriteFrames_csinh")
-animation = &"cherry"
+animation = &"lettuce"
 
 [node name="ButtonLeft" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -129,6 +129,9 @@ offset_left = 12.0
 offset_top = 81.0
 offset_right = 56.0
 offset_bottom = 103.0
+
+[node name="buySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_0off3")
 
 [connection signal="pressed" from="ButtonLeft" to="." method="_on_button_left_pressed"]
 [connection signal="pressed" from="ButtonRight" to="." method="_on_button_right_pressed"]

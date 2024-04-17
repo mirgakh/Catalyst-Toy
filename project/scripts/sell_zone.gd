@@ -3,6 +3,7 @@ extends StaticBody2D
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("sell"):
+		$ChaChing.play()
 		var carrots = Global.numofcarrots
 		var apples = Global.numofapples
 		var lettuce = Global.numoflettuce

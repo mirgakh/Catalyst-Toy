@@ -57,6 +57,7 @@ func swap_item_forward():
 
 func buy():
 	Global.coins -= price
+	$buySound.play()
 	if item == 1:
 		itemOwned[0] = true
 	if item == 2:
